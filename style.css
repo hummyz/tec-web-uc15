@@ -1,153 +1,236 @@
-/*Resete do navegador */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+    --bg: #0b0f13; /* base escura para toda a página */
+    --bg-soft: rgba(22, 28, 31, 0.95); /* painel escuro translúcido */
+    --surface: rgba(231, 234, 237, 0.95); /* superfície clara prateada */
+    --surface-soft: rgba(191, 198, 198, 0.18); /* borda/prata suave */
+    --text-light: #f5f7f8; /* texto claro em fundos escuros */
+    --text-dark: #0f172a; /* texto escuro em superfícies claras */
+    --muted: #a6b0b3; /* texto secundário prateado */
+    --primary: #44d07e; /* verde vibrante de destaque */
+    --primary-dark: #2fa45c; /* verde escuro para estados */
+    --border: rgba(191, 198, 198, 0.18); /* borda prateada suave */
 }
 
-/* Configurações gerais */
+* {
+    margin: 0; /* remove margens padrão */
+    padding: 0; /* remove preenchimentos padrão */
+    box-sizing: border-box; /* inclui bordas no cálculo de largura */
+}
+
+html {
+    scroll-behavior: smooth; /* rolagem suave para links de âncora */
+}
 
 body {
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.8;
-    color: #333;
-    background:linear-gradient(
-        135deg,
-        rgba(37, 99, 235, 0.9),
-        rgba(99, 102, 241, 0.8),
-        rgba(255, 221, 0, 0.7),
-        rgba(16, 185, 129, 0.8)
-    );
-    min-height: 100vh;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* tipografia moderna e legível */
+    line-height: 1.75; /* melhor espaçamento entre linhas */
+    color: var(--text-light); /* cor de texto em fundos escuros */
+    background: linear-gradient(135deg, #0b0f13 0%, #131a1f 45%, #172022 100%); /* fundo escuro gradiente */
+    min-height: 100vh; /* garante cobertura completa da tela */
 }
 
-/* Links */
-
-a {
-    color:rgb(83, 83, 114);
-    text-decoration: none;
-    transition: 0.3s;
-    font-size: 25px;
-    font-weight: 500;
+body::before {
+    content: ""; /* camada decorativa extra */
+    position: fixed; /* fixa a camada ao fundo da página */
+    inset: 0; /* ocupa toda a tela */
+    background: radial-gradient(circle at top left, rgba(68, 208, 126, 0.18), transparent 28%), radial-gradient(circle at bottom right, rgba(191, 198, 198, 0.12), transparent 22%); /* efeito leve verde e prata */
+    pointer-events: none; /* não bloqueia interações */
 }
-
-a:hover {
-  color:rgb(229, 229, 252); 
-  font-size: 30px;
-    font-weight: 600;
-}
-
-/* Menu de Navegação */
 
 nav {
-    background: rgba(17, 24, 39, 0.9);
-    backdrop-filter: blur(8px);
-    position: sticky;
-    top: 0;
-    z-index: 0;
-    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.25);
-    padding: 15px 0 15px 8px;
+    display: flex; /* organiza itens horizontalmente */
+    align-items: center; /* centraliza verticalmente */
+    justify-content: space-between; /* separa logo e links */
+    gap: 1rem; /* espaçamento entre itens */
+    background: var(--bg-soft); /* navegação escura */
+    border-bottom: 1px solid var(--border); /* linha sutil de separação */
+    backdrop-filter: blur(16px); /* leve desfoque no fundo */
+    position: sticky; /* fixa o menu no topo */
+    top: 0; /* topo da página */
+    z-index: 10; /* permanece acima do conteúdo */
+    padding: 1rem 1.25rem; /* espaçamento interno do menu */
+}
+
+.logo img {
+    height: 2.6rem; /* tamanho fixo do logo */
+    width: auto; /* mantém proporção do SVG */
+    display: block; /* remove espaçamento inline */
 }
 
 nav ul {
-   list-style:none;
-   display: flex; 
-   align-items: center;
-   justify-content:center;
-   gap: 18px;
-}
-
-nav li {
-    margin: 0;
+    list-style: none; /* remove marcadores */
+    display: flex; /* organiza links horizontalmente */
+    flex-wrap: wrap; /* permite quebra em telas menores */
+    justify-content: center; /* centraliza links */
+    align-items: center; /* alinha links verticalmente */
+    gap: 0.75rem; /* espaçamento entre links */
 }
 
 nav a {
-    color: white;
-    font-weight: 550;
-    padding: 10px 10px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-}
-nav a:hover {
-    background-color: rgba(255, 255, 255, 0.15);
-    color: #d1cfcf;
+    color: var(--text-light); /* texto claro no menu */
+    font-weight: 600; /* link destacado */
+    padding: 0.85rem 1rem; /* área de clique confortável */
+    border-radius: 999px; /* cantos arredondados */
+    transition: transform 0.25s ease, background-color 0.25s ease; /* animação suave */
 }
 
-/* DIVs de conteúdo */
-div {
-    max-width: 90%;
-    min-height: 350px;
-    margin: 30px auto;
-    padding: 35px;
-    background: rgba(237, 235, 235, 0.752);
-    border-radius: 16px;
-    backdrop-filter: blur(15px);
-    box-shadow:0 16px 36px rgba(0, 0, 0, 0.15);
+nav a:hover,
+nav a:focus-visible {
+    background-color: rgba(68, 208, 126, 0.14); /* destaque verde leve */
+    transform: translateY(-1px); /* efeito de elevação */
+    outline: 2px solid rgba(68, 208, 126, 0.6); /* foco acessível */
+    outline-offset: 4px; /* espaço entre foco e link */
 }
 
-/* Títulos e Subtítulo */
-h1 {
-    font-size: 2.6rem;
-    color: #1e3a8a;
-    margin-bottom: 25px;
-    border-bottom: 3px solid #2563eb;
-    padding-bottom: 12px;
-    line-height: 1.3;
-}
-h2 {
-    font-size: 1.8rem;
-    color: #2563eb;
-    margin-top: 20px;
-    margin-bottom: 15px;
+main {
+    max-width: 1080px; /* limita largura de leitura */
+    margin: 0 auto; /* centraliza o conteúdo */
+    padding: 2rem 1.25rem 3rem; /* espaçamento ao redor */
 }
 
-h3 {
-    font-size: 1.4rem;
-    color: #475569;
-    margin-top: 20px;
-    margin-bottom: 10px;
+.hero,
+.card {
+    background: rgba(18, 22, 25, 0.96); /* painel escuro para cards */
+    border: 1px solid var(--surface-soft); /* contorno prateado sutil */
+    border-radius: 28px; /* cantos arredondados elegantes */
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.18); /* elevação suave */
+    backdrop-filter: blur(20px); /* efeito glassmorphism leve */
+    padding: 2rem; /* espaçamento interno confortável */
 }
 
-/* Textos */
-p {
-    font-size: 1.4rem;
-    font-weight: 220px;
-    color: rgb(40, 39, 39);
-    text-shadow:0 2px 2px slategrey;
-    text-align: justify;
-    padding: 20px;
-    margin-bottom: 18px;
+.hero {
+    margin-top: 1.5rem; /* separação do topo */
 }
 
-strong {
-    display: block;
-    margin-top: 20px;
-    padding: 15px;
-    background: #eff6ff;
-    border-left: 5px solid #2563eb;
-    border-radius: 8px;
-    font-size: 1.1rem;
+.hero h1 {
+    font-size: clamp(2.4rem, 4vw, 3.6rem); /* escala responsiva para o título */
+    color: var(--primary); /* destaque verde principal */
+    line-height: 1.05; /* reduz espaço entre linhas do título */
+    margin-bottom: 1rem; /* separa do subtítulo */
 }
 
-/* Listas */
-ul {
-    margin: 15px 0 20px 30px;
-    list-style:circle;
+.hero p {
+    font-size: 1.05rem; /* texto confortável para leitura */
+    color: var(--muted); /* texto secundário prateado */
+    max-width: 66rem; /* largura máxima de leitura */
+    margin-bottom: 1rem; /* espaçamento inferior */
 }
 
-div li {
-    margin-bottom: 10px;
-    font-size: 1.4rem;
-    font-weight: 220px;
-    color: rgb(40, 39, 39);
-    text-shadow:0 2px 2px slategrey;
+.content-grid {
+    display: grid; /* organiza cards em grade */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* grade responsiva automática */
+    gap: 1.5rem; /* espaçamento entre cards */
+    margin-top: 1.5rem; /* separação do hero */
 }
-/* Separadores */
-hr {
-    width: 90%;
-    margin: 20px auto;
-    border: none;
-    border-top: 1px solid rgba(255,255,255,0.4);
+
+.card {
+    margin: 0; /* remove margem duplicada, a grade controla o espaçamento */
+}
+
+.card h1,
+.card h2 {
+    color: var(--primary); /* títulos em verde vibrante */
+}
+
+.card h1 {
+    font-size: 2rem; /* tamanho forte para título principal */
+    margin-bottom: 1rem; /* separa do texto */
+}
+
+.card h2 {
+    font-size: 1.75rem; /* tamanho claro para subtítulos */
+    margin-bottom: 0.85rem; /* separa do corpo do texto */
+}
+
+.card h3 {
+    font-size: 1.35rem; /* subtítulo menor para seções internas */
+    color: var(--text-light); /* mantém contraste leve */
+    margin-top: 1.75rem; /* espaçamento acima */
+    margin-bottom: 0.75rem; /* espaçamento abaixo */
+}
+
+.card p,
+.card ul,
+.card li {
+    color: var(--text-light); /* texto do card em off-white */
+}
+
+.card p {
+    font-size: 1rem; /* tamanho consistente para parágrafos */
+    margin-bottom: 1rem; /* espaçamento entre blocos */
+}
+
+.card ul {
+    margin: 1rem 0 1.4rem 1.4rem; /* indentação e espaçamento para listas */
+    list-style: disc; /* marcador clássico */
+}
+
+li {
+    margin-bottom: 0.75rem; /* espaço entre itens da lista */
+    line-height: 1.75; /* mais legível para listas */
+}
+
+a.button-link {
+    display: inline-flex; /* botão com alinhamento de conteúdo */
+    align-items: center; /* centraliza verticalmente */
+    justify-content: center; /* centraliza horizontalmente */
+    padding: 0.95rem 1.5rem; /* área de toque confortável */
+    border-radius: 999px; /* formato de pílula */
+    background: var(--primary); /* cor verde de destaque */
+    color: var(--text-dark); /* texto escuro para contraste */
+    font-weight: 700; /* ênfase no texto do botão */
+    text-decoration: none; /* remove sublinhado */
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease; /* animação suave */
+}
+
+a.button-link:hover,
+a.button-link:focus-visible {
+    background: var(--primary-dark); /* tom mais escuro no hover/foco */
+    box-shadow: 0 18px 32px rgba(68, 208, 126, 0.28); /* sombra verde suave */
+    transform: translateY(-1px); /* eleva o botão */
+    outline: 2px solid rgba(68, 208, 126, 0.6); /* foco acessível visível */
+    outline-offset: 4px; /* separa o foco do botão */
+}
+
+footer {
+    text-align: center; /* centraliza o rodapé */
+    padding: 1.5rem 1rem 2rem; /* espaçamento interno */
+    color: var(--muted); /* texto prateado suave */
+    background: rgba(11, 15, 19, 0.9); /* fundo escuro no rodapé */
+    border-top: 1px solid var(--border); /* linha separadora sutil */
+    margin-top: 2rem; /* espaço acima do rodapé */
+}
+
+@media (max-width: 820px) {
+    nav {
+        flex-direction: column; /* empilha logo e links */
+        align-items: flex-start; /* alinha itens à esquerda */
+    }
+
+    nav ul {
+        justify-content: center; /* centraliza links em telas médias */
+        width: 100%; /* ocupa largura total */
+    }
+
+    .hero,
+    .card {
+        padding: 1.5rem; /* reduz padding em telas menores */
+    }
+}
+
+@media (max-width: 640px) {
+    nav ul {
+        flex-direction: column; /* menu vertical em mobile */
+        width: 100%; /* ocupa largura completa */
+    }
+
+    .hero h1 {
+        font-size: 2.2rem; /* título menor em mobile */
+    }
+
+    a.button-link {
+        width: 100%; /* botão ocupa largura máxima */
+    }
 }
 
 

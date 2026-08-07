@@ -3,32 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Artigo CSS4</title>
+    <meta name="description" content="Artigo sobre HTML e sua função na construção de páginas web.">
+    <link rel="stylesheet" href="style.css">
+    <title>Artigo HTML | Tecnologias Web</title>
 </head>
 <body>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="artigo-html.html">HTML5</a></li>
-                <li><a href="artigo-css.html">CSS4</a></li>
-                <li><a href="artigo-js.html">JS-ES8</a></li>
-            </ul>
-        </nav>
-    <h1>HTML – Estrutura da Página</h1>
-    <p>Última versão: HTML Living Standard (evolução contínua do HTML5).
-    O HTML (HyperText Markup Language) é a linguagem responsável pela estrutura e organização do conteúdo de uma página web.</p>
-    <h2>Principal funcionalidade</h2>
-    <p>Definir elementos como:</p>
-    <ul>
-        <li>Títulos</li>
-        <li>Parágrafos</li>
-        <li>Imagens</li>
-        <li>Links</li>
-        <li>Formulários</li>
-        <li>Tabelas</li>
-    </ul>
-    <h3>Exemplo de uso</h3>
-    <p>O HTML funciona como o esqueleto de um site, criando toda a sua estrutura básica.</p>
+    <nav aria-label="Navegação principal">
+        <div class="logo"><img src="logo.svg" alt="Logo TI 40" /></div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="artigo-html.html">HTML</a></li>
+            <li><a href="artigo-css.html">CSS</a></li>
+            <li><a href="artigo-js.html">JavaScript</a></li>
+        </ul>
+    </nav>
 
+    <main>
+        <article class="card">
+            <header>
+                <h1>HTML – Estrutura da Página</h1>
+                <p>Última versão: HTML Living Standard (evolução contínua do HTML5).</p>
+            </header>
+
+            <section>
+                <h2>Principal funcionalidade</h2>
+                <p>O HTML (HyperText Markup Language) é a linguagem responsável pela estrutura e organização do conteúdo de uma página web.</p>
+                <p>Definir elementos como:</p>
+                <ul>
+                    <li>Títulos</li>
+                    <li>Parágrafos</li>
+                    <li>Imagens</li>
+                    <li>Links</li>
+                    <li>Formulários</li>
+                    <li>Tabelas</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Exemplo de uso</h3>
+                <p>O HTML funciona como o esqueleto de um site, criando toda a sua estrutura básica.</p>
+            </section>
+            <a class="button-link" href="index.html">Voltar para a página principal</a>
+        </article>
+    </main>
+
+    <footer>
+        <p>Volte para a página principal para continuar explorando CSS e JavaScript.</p>
+    </footer>
 </body>
 </html>

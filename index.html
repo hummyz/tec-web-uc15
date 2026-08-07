@@ -3,48 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conheça HTML, CSS e JavaScript em um site estático com informação clara e acessível.">
     <link rel="stylesheet" href="style.css">
-    <title>Página Principal</title>
+    <title>HTML, CSS e JavaScript | Tecnologias Web</title>
 </head>
 <body>
-    <nav>
+    <nav aria-label="Navegação principal">
+        <div class="logo"><img src="logo.svg" alt="Logo TI 40" /></div>
         <ul>
             <li><a href="#principal">Home</a></li>
-            <li><a href="#html">HTML5</a></li>
-            <li><a href="#css">CSS4</a></li>
-            <li><a href="#javaScript">JS-ES8</a></li>
+            <li><a href="#html">HTML</a></li>
+            <li><a href="#css">CSS</a></li>
+            <li><a href="#javascript">JavaScript</a></li>
         </ul>
     </nav>
 
-    <div id="principal">
-        <h1>As Tecnologias Fundamentais da Web - HTML | CSS | JavaScrip</h1>
-        <p>Bem-vindo ao nosso site sobre desenvolvimento web! Aqui você conhecerá as três principais tecnologias utilizadas na criação de páginas e aplicações para a internet: HTML, CSS e JavaScript.</p>
-        <h2>Como Essas Tecnologias Trabalham Juntas?</h2>
-        <p>As três tecnologias se complementam:</p>
-        <ul>
-            <li>HTML → Estrutura o conteúdo</li>
-            <li>CSS → Define o visual e o design</li>
-            <li>JavaScript → Adiciona interatividade e dinamismo</li>
-        </ul>
-        <strong>HTML constrói, CSS estiliza e JavaScript traz vida ao site. 🚀</strong>,
-    </div>
-    <hr>
-    <div id="html">
-        <h2>HTML – Estrutura da Página</h2>
-        <p>Última versão: HTML Living Standard (evolução contínua do HTML5).
-        O HTML (HyperText Markup Language) é a linguagem responsável pela estrutura e organização do conteúdo de uma página web. <a href="artigo-html.html">saiba mais...</a></p>
-    </div>
-    <hr>
-    <div id="css">
-        <h2>CSS – Estilo e Aparência</h2>
-        <p>Última versão: CSS é mantido como um padrão vivo (Living Standard), recebendo constantes atualizações por módulos. Não existe mais uma versão única como "CSS4".
-        O CSS (Cascading Style Sheets) é utilizado para controlar a aparência visual das páginas web.<a href="artigo-css.html">saiba mais...</a></p>
-    </div>
-    <hr>
-    <div id="javaScript">
-        <h2>JavaScript – Interatividade</h2>
-        <p>Última versão: ECMAScript 2025 (ES2025).
-        O JavaScript é a linguagem de programação da web responsável por adicionar comportamento e interatividade às páginas.<a href="artigo-js.html">saiba mais...</a></p>
-    </div>
+    <main>
+        <header id="principal" class="hero">
+            <h1>As Tecnologias Fundamentais da Web</h1>
+            <p>Bem-vindo ao nosso site sobre desenvolvimento web. Aqui você conhece as três principais tecnologias utilizadas na criação de páginas e aplicações para a internet.</p>
+            <p>HTML estrutura o conteúdo, CSS define a aparência e JavaScript adiciona interatividade.</p>
+        </header>
+
+        <!-- grade de cards responsiva para seções principais -->
+        <div class="content-grid">
+            <section id="html" class="card">
+                <h2>HTML – Estrutura da Página</h2>
+                <p>Última versão: HTML Living Standard (evolução contínua do HTML5). O HTML (HyperText Markup Language) é a linguagem responsável pela estrutura e organização do conteúdo de uma página web.</p>
+                <a class="button-link" href="artigo-html.html">Saiba mais sobre HTML</a>
+            </section>
+
+            <section id="css" class="card">
+                <h2>CSS – Estilo e Apresentação</h2>
+                <p>Última versão: CSS é mantido como um padrão vivo (Living Standard), atualizado por módulos. O CSS (Cascading Style Sheets) controla a aparência visual das páginas.</p>
+                <a class="button-link" href="artigo-css.html">Saiba mais sobre CSS</a>
+            </section>
+
+            <section id="javascript" class="card">
+                <h2>JavaScript – Interatividade</h2>
+                <p>Última versão: ECMAScript 2025 (ES2025). O JavaScript é a linguagem da web responsável por adicionar comportamento e interatividade às páginas.</p>
+                <a class="button-link" href="artigo-js.html">Saiba mais sobre JavaScript</a>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>Projeto de estudo sobre HTML, CSS e JavaScript com foco em acessibilidade e responsividade.</p>
+    </footer>
 </body>
 </html>
