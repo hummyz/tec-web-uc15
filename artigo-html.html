@@ -1,33 +1,35 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Artigo sobre HTML e sua função na construção de páginas web.">
     <link rel="stylesheet" href="style.css">
-    <title>Artigo HTML | Tecnologias Web</title>
+    <title>Artigo HTML | TI40</title>
 </head>
-<body>
-    <nav aria-label="Navegação principal">
-        <div class="logo"><img src="logo.svg" alt="Logo TI 40" /></div>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="artigo-html.html">HTML</a></li>
-            <li><a href="artigo-css.html">CSS</a></li>
-            <li><a href="artigo-js.html">JavaScript</a></li>
-        </ul>
-    </nav>
+<body id="top">
+    <header class="site-header">
+        <a href="index.html" class="brand" aria-label="Ir para a página inicial">
+            <img src="logo-ti40.svg" alt="Logo TI40" class="logo">
+            <span class="brand-name">TI40</span>
+        </a>
+        <nav aria-label="Navegação principal">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="artigo-html.html">HTML</a></li>
+                <li><a href="artigo-css.html">CSS</a></li>
+                <li><a href="artigo-js.html">JavaScript</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <main>
-        <article class="card">
-            <header>
-                <h1>HTML – Estrutura da Página</h1>
-                <p>Última versão: HTML Living Standard (evolução contínua do HTML5).</p>
-            </header>
+        <article class="content-card">
+            <h1>HTML – Estrutura da Página</h1>
+            <p>Última versão: HTML Living Standard (evolução contínua do HTML5). O HTML (HyperText Markup Language) é a linguagem responsável pela estrutura e organização do conteúdo de uma página web.</p>
 
             <section>
                 <h2>Principal funcionalidade</h2>
-                <p>O HTML (HyperText Markup Language) é a linguagem responsável pela estrutura e organização do conteúdo de uma página web.</p>
                 <p>Definir elementos como:</p>
                 <ul>
                     <li>Títulos</li>
@@ -43,12 +45,11 @@
                 <h3>Exemplo de uso</h3>
                 <p>O HTML funciona como o esqueleto de um site, criando toda a sua estrutura básica.</p>
             </section>
-            <a class="button-link" href="index.html">Voltar para a página principal</a>
         </article>
     </main>
 
-    <footer>
-        <p>Volte para a página principal para continuar explorando CSS e JavaScript.</p>
+    <footer class="site-footer">
+        <a class="top-link" href="#top">Voltar ao topo</a>
     </footer>
 </body>
 </html>
