@@ -1,34 +1,52 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Artigo CSS4</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Artigo HTML | TI40</title>
 </head>
-<body>
-        <nav>
+<body id="top">
+    <header class="site-header"> <!-- header padrão com marca e navegação -->
+        <a href="index.html" class="brand" aria-label="Ir para a página inicial">
+            <img src="logo-ti40.svg" alt="Logo TI40" class="logo">
+            <span class="brand-name">TI40</span>
+        </a>
+        <nav aria-label="Navegação principal">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="artigo-html.html">HTML5</a></li>
-                <li><a href="artigo-css.html">CSS4</a></li>
-                <li><a href="artigo-js.html">JS-ES8</a></li>
+                <li><a href="artigo-html.html">HTML</a></li>
+                <li><a href="artigo-css.html">CSS</a></li>
+                <li><a href="artigo-js.html">JavaScript</a></li>
             </ul>
         </nav>
-    <h1>HTML – Estrutura da Página</h1>
-    <p>Última versão: HTML Living Standard (evolução contínua do HTML5).
-    O HTML (HyperText Markup Language) é a linguagem responsável pela estrutura e organização do conteúdo de uma página web.</p>
-    <h2>Principal funcionalidade</h2>
-    <p>Definir elementos como:</p>
-    <ul>
-        <li>Títulos</li>
-        <li>Parágrafos</li>
-        <li>Imagens</li>
-        <li>Links</li>
-        <li>Formulários</li>
-        <li>Tabelas</li>
-    </ul>
-    <h3>Exemplo de uso</h3>
-    <p>O HTML funciona como o esqueleto de um site, criando toda a sua estrutura básica.</p>
+    </header>
 
+    <main>
+        <article class="content-card"> <!-- artigo com semântica apropriada -->
+            <h1>HTML – Estrutura da Página</h1>
+            <p>Última versão: HTML Living Standard (evolução contínua do HTML5). O HTML (HyperText Markup Language) é a linguagem responsável pela estrutura e organização do conteúdo de uma página web.</p>
+            <section>
+                <h2>Principal funcionalidade</h2>
+                <p>Definir elementos como:</p>
+                <ul>
+                    <li>Títulos</li>
+                    <li>Parágrafos</li>
+                    <li>Imagens</li>
+                    <li>Links</li>
+                    <li>Formulários</li>
+                    <li>Tabelas</li>
+                </ul>
+            </section>
+            <section>
+                <h3>Exemplo de uso</h3>
+                <p>O HTML funciona como o esqueleto de um site, criando toda a sua estrutura básica.</p>
+            </section>
+        </article>
+    </main>
+
+    <footer class="site-footer"> <!-- link de retorno ao topo para melhor navegação -->
+        <a class="top-link" href="#top">Voltar ao topo</a>
+    </footer>
 </body>
 </html>
